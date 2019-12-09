@@ -17,6 +17,8 @@ function Characters() {
           </DragItem>
         ))}
       </Grid>
+
+      <Grid></Grid>
     </div>
   );
 }

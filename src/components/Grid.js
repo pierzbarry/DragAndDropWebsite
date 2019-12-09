@@ -2,10 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 export const Grid = styled.div`
-  width: 600px;
+  width: 800px;
   display: flex;
+  border-radius: 20px;
   justify-content: start;
   flex-wrap: wrap;
+  margin-bottom: 1rem;
 `;
 
 export const GridImage = styled.div`
