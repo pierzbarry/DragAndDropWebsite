@@ -2,23 +2,24 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Nav, Navbar } from 'react-bootstrap';
 import styled from 'styled-components';
+import './fontStyle.css';
+
 
 const Styles = styled.div`
-  .navbar {
-    background-color: #222;
-  }
-  a, .navbar-brand, .navbar-nav .nav-link {
-    color: #bbb;
-    &:hover {
-      color: #efefef;
-      text-decoration: none;
-    }
-  }
+  // a, .navbar-brand, .navbar-nav .nav-link {
+  //   color: #bbb;
+  //   font-weight: 400px !important;
+  //   &:hover {
+  //     color: #696969;
+  //     text-decoration: none;
+      
+  //   }
+  // }
 `;
 
 export const NavigationBar = () => (
   <Styles>
-    <Navbar expand="lg">
+    <Navbar fixed="top" expand="lg" bg="light">
       <Navbar.Brand><Nav-Link><Link to="/">Portfolio</Link></Nav-Link></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
@@ -35,7 +36,7 @@ export const NavigationBar = () => (
           </Nav.Item>
           <Nav.Item>
             <Nav.Link>
-              <Link to="/contact">Contact</Link>
+              <Link to="/Contact">Contact</Link>
             </Nav.Link>
           </Nav.Item>
         </Nav>

@@ -1,3 +1,4 @@
+  
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -16,7 +17,7 @@ class App extends Component {
     return (
       <React.Fragment>
         <Router>
-        {/* <NavigationBar /> */}
+        <NavigationBar />
         <Jumbotron />
           <Layout>
               <Switch>

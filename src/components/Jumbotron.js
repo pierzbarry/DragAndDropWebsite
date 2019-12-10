@@ -27,7 +27,11 @@ const Styles = styled.div`
 
   .container {
     position: relative;
-    top: 150px;
+    top: 200px;
+  }
+
+  .changeMe {
+    font-weight: 600px;
   }
 `;
 
@@ -36,8 +40,7 @@ export const Jumbotron = () => (
     <Jumbo fluid className="jumbo">
       <div className="overlay"></div>
       <Container>
-        <h1>Welcome</h1>
-        <p>This is a very ugly website at the moment</p>
+        <h1 className="changeMe">Welcome</h1>
       </Container>
     </Jumbo>
 

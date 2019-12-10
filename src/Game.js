@@ -7,7 +7,6 @@ import { shuffle, getTimeLeft, move, GAME_STATE } from './custom/utils';
 import Modal from './comp/Modal';
 import Header from './comp/Header';
 import Dropzone from './comp/Dropzone';
-import Footer from './comp/Footer';
 
 import styled from 'styled-components';
 const Styles = styled.div`
@@ -119,7 +118,6 @@ class Game extends React.Component {
               </div>
             </DragDropContext>
           )}
-          <Footer />
           <br/> <br/>
         </Styles>  
       </>
