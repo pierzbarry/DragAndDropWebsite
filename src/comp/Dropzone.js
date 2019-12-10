@@ -12,14 +12,14 @@ const Styles = styled.div`
 
 `;
 
-const Dropzone = ({ isDropDisabled, heroes, id }) => (
-    <div className="column xs={12} col-4">
+const Dropzone = ({ isDropDisabled, info, id }) => (
+    <div className="column xs= col-4">
       <div className="divider" data-content={id.toUpperCase()} />
       <Droppable droppableId={id} isDropDisabled={isDropDisabled}>
         {provided => {
           return (
             <div className="menu hero-list" {...provided.droppableProps} ref={provided.innerRef}>
-              {heroes.map(({ name }, index) => (
+              {info.map(({ name }, index) => (
                 <Hero key={name} name={name} index={index} />
               ))}
               {provided.placeholder}
@@ -42,9 +42,6 @@ const Hero = ({ name, index }) => (
               {...provided.draggableProps}
               {...provided.dragHandleProps}
             >
-              {/* <figure style={{ backgroundColor: 'transparent' }} className="avatar tile-icon">
-                <img src={`./icons/${name.toLowerCase().replace(' ', '-')}.png`} alt={name} />
-              </figure> */}
               <div className="avatar mx-auto"><img src={`./icons/${name.toLowerCase().replace(' ', '-')}.png`} alt={name} /></div>
             </div>
         );

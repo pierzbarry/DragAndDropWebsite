@@ -1,28 +1,19 @@
 /** custom/data.js **/
 
-export const COMICS = {
-  DC: 'dc',
-  MARVEL: 'marvel',
+export const CHARACTERS = {
+  DARTHVADER: 'darth vader',
+  MICKEYMOUSE: 'mickey mouse',
   // MANGA: 'manga',
 };
 
-export const HEROES = [
-  {
-    name: 'Mickey Mouse',
-    comics: 'dc',
-  },
-
+export const INFO = [
   {
     name: 'Darth Vader',
-    comics: 'marvel',
+    characters: 'darth vader',
   },
 
-  // {
-  //   name: 'Satoshi',
-  //   comics: 'manga',
-  // },
-  // {
-  //   name: 'Yumi',
-  //   comics: 'manga',
-  // },
+  {
+    name: 'Mickey Mouse',
+    characters: 'mickey mouse',
+  },
 ];

@@ -24,9 +24,9 @@ const Modal = ({ gameState, groups, startGame, timeLeft, resetGame }) => (
     <Card >
       <Card.Body className="mx-auto text-center">
         <div className="content h6">
-          {' '}
+        {' '}
           {gameState === GAME_STATE.READY
-            ? `Drag and drop the questions on to the correct answers. The faster the better!`
+            ? `Drag and drop the character to it's matching description.`
             : `${getTotalScore(groups)}`}
         </div>
         <button
@@ -38,6 +38,25 @@ const Modal = ({ gameState, groups, startGame, timeLeft, resetGame }) => (
       </Card.Body>
     </Card>
     
+
+    {/* <header className="navbar">
+        <>
+          <section className="navbar-center">{' '}
+          {gameState === GAME_STATE.READY
+            ? `Drag and drop the character to it's matching description.`
+            : `${getTotalScore(groups)}`}</section>
+          <section className="navbar-center">
+            <button
+              className="btn btn-default"
+              onClick={gameState === GAME_STATE.READY ? startGame : resetGame}
+            >
+              {gameState === GAME_STATE.READY ? 'Start new game' : 'Restart game'}
+            </button>
+          </section>
+        </>
+    </header> */}
+
+
   </Styles>   
 );
 

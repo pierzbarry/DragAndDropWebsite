@@ -1,4 +1,4 @@
-import { HEROES, COMICS } from './data';
+import { INFO, CHARACTERS } from './data';
 
 // the Knuth shuffle algorithm
 export function shuffle(array) {
@@ -23,13 +23,13 @@ export function shuffle(array) {
 }
 
 // method to handle points calculation based on sort order as well as grouping
-function calculateScore(groupedHeroes, comics) {
-  const correctOrder = HEROES.filter(hero => hero.comics === comics).sort((a, b) =>
+function calculateScore(groupedInfo, characters) {
+  const correctOrder = INFO.filter(hero => hero.characters === characters).sort((a, b) =>
     a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1
   );
 
-  return groupedHeroes.reduce((score, { name }, index) => {
-    const maxPoint = HEROES.length;
+  return groupedInfo.reduce((score, { name }, index) => {
+    const maxPoint = INFO.length;
     const heroIndex = correctOrder.findIndex(hero => hero.name === name);
     const penalty = heroIndex >= 0 ? Math.abs(index - heroIndex) : maxPoint;
     console.log({ name, points: maxPoint - penalty });
@@ -38,8 +38,8 @@ function calculateScore(groupedHeroes, comics) {
 }
 
 export function getTotalScore(groups, result) {
-  const gameScore = Object.values(COMICS).reduce(
-    (sum, comicsName) => sum + calculateScore(groups[comicsName], comicsName),
+  const gameScore = Object.values(CHARACTERS).reduce(
+    (sum, charactersName) => sum + calculateScore(groups[charactersName], charactersName),
     0
   );
 
