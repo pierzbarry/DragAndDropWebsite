@@ -9,6 +9,14 @@ import Header from './comp/Header';
 import Dropzone from './comp/Dropzone';
 import Footer from './comp/Footer';
 
+import styled from 'styled-components';
+const Styles = styled.div`
+
+  .changeMe {
+    background-color: pink;
+  }
+`;
+
 const GAME_DURATION = 1000 * 30; // 30 seconds
 
 const initialState = {
@@ -81,43 +89,45 @@ class Game extends React.Component {
 
     return (
       <>
-        <Header gameState={gameState} timeLeft={timeLeft} endGame={this.endGame} />
-        {this.state.gameState !== GAME_STATE.PLAYING && (
-          <Modal
-            startGame={this.startGame}
-            resetGame={this.resetGame}
-            timeLeft={timeLeft}
-            gameState={gameState}
-            groups={groups}
-          />
-        )}
-        {(this.state.gameState === GAME_STATE.PLAYING ||
-          this.state.gameState === GAME_STATE.DONE) && (
-          <DragDropContext onDragEnd={this.onDragEnd}>
-            <div className="container">
-              <div className="columns">
-                <Dropzone id="bench" heroes={bench} isDropDisabled={isDropDisabled} />
-                <Dropzone
-                  id={COMICS.MARVEL}
-                  heroes={this.state[COMICS.MARVEL]}
-                  isDropDisabled={isDropDisabled}
-                />
-                <Dropzone
-                  id={COMICS.DC}
-                  heroes={this.state[COMICS.DC]}
-                  isDropDisabled={isDropDisabled}
-                />
-                {/* <Dropzone
-                  id={COMICS.MANGA}
-                  heroes={this.state[COMICS.MANGA]}
-                  isDropDisabled={isDropDisabled}
-                /> */}
+        <Styles >
+          <Header gameState={gameState} timeLeft={timeLeft} endGame={this.endGame} />
+          {this.state.gameState !== GAME_STATE.PLAYING && (
+            <Modal
+              startGame={this.startGame}
+              resetGame={this.resetGame}
+              timeLeft={timeLeft}
+              gameState={gameState}
+              groups={groups}
+            />
+          )}
+          {(this.state.gameState === GAME_STATE.PLAYING ||
+            this.state.gameState === GAME_STATE.DONE) && (
+            <DragDropContext onDragEnd={this.onDragEnd}>
+              <div className="container">
+                <div className="columns">
+                  <Dropzone id="bench" heroes={bench} isDropDisabled={isDropDisabled} />
+                  <Dropzone
+                    id={COMICS.MARVEL}
+                    heroes={this.state[COMICS.MARVEL]}
+                    isDropDisabled={isDropDisabled}
+                  />
+                  <Dropzone className="changeMe"
+                    id={COMICS.DC}
+                    heroes={this.state[COMICS.DC]}
+                    isDropDisabled={isDropDisabled}
+                  />
+                  {/* <Dropzone
+                    id={COMICS.MANGA}
+                    heroes={this.state[COMICS.MANGA]}
+                    isDropDisabled={isDropDisabled}
+                  /> */}
+                </div>
               </div>
-            </div>
-          </DragDropContext>
-        )}
-        <Footer />
-        <br/> <br/>
+            </DragDropContext>
+          )}
+          <Footer />
+          <br/> <br/>
+        </Styles>  
       </>
     );
   }

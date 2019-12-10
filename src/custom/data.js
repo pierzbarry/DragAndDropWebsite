@@ -8,12 +8,12 @@ export const COMICS = {
 
 export const HEROES = [
   {
-    name: 'Batman',
+    name: 'Mickey Mouse',
     comics: 'dc',
   },
 
   {
-    name: 'Spiderman',
+    name: 'Darth Vader',
     comics: 'marvel',
   },
 

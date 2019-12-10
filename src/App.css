@@ -4,13 +4,16 @@ header.navbar {
 }
 
 div.menu .menu-item.tile.tile-centered {
-  margin-top: 5px;
+  margin-top: 10px;
+  text-align: center;
+  padding-left: 20px;
 }
 
 .menu.hero-list {
   z-index: inherit;
   transform: none;
-  min-height: 300px;
+  min-height: 336px;
+
 }
 
 footer {
