@@ -6,6 +6,7 @@ import { GridProvider } from "./components/GridContext";
 import * as serviceWorker from './serviceWorker';
 import App from "./App";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'spectre.css';
 import './index.css';
 
 ReactDOM.render( 
